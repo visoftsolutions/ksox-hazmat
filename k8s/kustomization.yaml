@@ -1,0 +1,17 @@
+resources:
+  # - issuer.yaml
+  # - certificates.yaml
+  - pvc.yaml
+
+namespace: ksox-finance
+
+secretGenerator:
+  - name: secrets
+    env: secrets.env
+
+configMapGenerator:
+  - name: settings
+    env: settings.env
+
+generatorOptions:
+  disableNameSuffixHash: true
