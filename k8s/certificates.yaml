@@ -7,8 +7,6 @@ spec:
   dnsNames:
     - ksox.finance
     - www.ksox.finance
-    - app.ksox.finance
-    - pay.ksox.finance
-    - dashboard.ksox.finance
+    - landing.ksox.finance
   issuerRef:
     name: letsencrypt-http01-issuer

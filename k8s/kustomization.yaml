@@ -1,7 +1,7 @@
 resources:
-  # - issuer.yaml
-  # - certificates.yaml
-  - pvc.yaml
+  - namespace.yaml
+  - issuer.yaml
+  - certificates.yaml
 
 namespace: ksox-finance
 
