@@ -1,0 +1,6 @@
+resources:
+  - namespace.yaml
+  - issuer.yaml
+  - certificates.yaml
+
+namespace: ksox-finance

@@ -1,0 +1,35 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-http01-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-http01-issuer-account-key
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: ingress-nginx-external
+        selector:
+          dnsZones:
+            - ksox.finance
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-dns01-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-dns01-account-key
+    solvers:
+      - selector:
+          dnsZones:
+            - internal.visoft.solutions
+        dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: letsencrypt-cloudflare-api-token-secret
+              key: api-token

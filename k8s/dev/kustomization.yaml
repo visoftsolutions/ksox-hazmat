@@ -1,0 +1,13 @@
+resources:
+  - namespace.yaml
+  - issuer.yaml
+  - certificates.yaml
+
+namespace: dev-ksox-finance
+
+secretGenerator:
+  - name: letsencrypt-cloudflare-api-token-secret
+    env: ./enviroment/letsencrypt-cloudflare-api-token-secret.env
+
+generatorOptions:
+  disableNameSuffixHash: true
